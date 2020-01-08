@@ -1,0 +1,76 @@
+<!-- views/partials/header.ejs -->
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 ">
+  <a href="/" class="navbar-brand">&nbsp;Softwarica Fee Department</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item px-2">
+        <a href="/" class="nav-link">Dashboard</a>
+      </li>
+      <li class="nav-item px-2">
+        <a href="/product" class="nav-link">Product</a>
+      </li>
+      <li class="nav-item px-2">
+        <a href="/forecasting" class="nav-link">Forecasting</a>
+      </li>
+      <li class="nav-item px-2">
+        <a href="/fee" class="nav-link">Fee</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto navbar-right">
+      <!-- <li class="nav-item dropdown mr-3"> -->
+        <a href="#" class="nav-link" >
+          <i class="fa fa-user"></i> Welcome, <div id="username_header" style="display: inline-block"> </div>
+        </a>
+        <!-- <div class="dropdown-menu">
+          <a href="profile.html" class="dropdown-item">
+            <i class="fa fa-user-circle"></i> Profile
+          </a>
+          <a href="settings.html" class="dropdown-item">
+            <i class="fa fa-gear"></i> Settings
+          </a>
+        </div> -->
+      <!-- </li> -->
+      <li class="nav-item">
+        <a class="nav-link" id="logout">
+          <i class="fa fa-user-times"></i> Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+
+const logOut = document.getElementById('logout');
+logOut.addEventListener('click', getLoggedOut)
+
+function getLoggedOut(event){
+  if (confirm('Are you sure?')) {
+            let keysToRemove = ["Token", "username"];
+            for (key of keysToRemove) {
+              localStorage.removeItem(key);
+            }
+            window.location.href = '/login'
+          }
+        }
+
+ //----this is done when there is need to fetch data from database
+  // fetch("http://localhost:3000/api/students/" + localStorage.getItem("username"))
+  // .then(data=>{
+  //   return data.json()
+  // })
+  // .then(json=>{
+  //   const uname = document.getElementById('username_header')
+  //   uname.innerText = json[0].student_name;
+  // })
+
+  //this is done since there is no need to fetch data from db.
+    const uname = document.getElementById('username_header')
+    uname.innerText = localStorage.getItem("username");
+
+</script>

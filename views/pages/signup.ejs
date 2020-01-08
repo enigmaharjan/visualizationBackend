@@ -1,0 +1,47 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <script src="../../js/signup.js"></script>
+    
+
+
+<link rel="stylesheet" href="../../styles/css/login.css"> 
+</head>
+<body class="container">
+<header>
+</header>
+
+<main>
+        <div class="wrapper fadeInDown">
+                <div id="formContent">
+                  <!-- Tabs Titles -->
+              
+                  <!-- Icon -->
+                  <div class="fadeIn first">
+                    <img src="../../styles/images/SoftCoventryColab.jpg" id="icon" alt="User Icon" />
+                    <h1>Softwarica Fee Department</h1>
+                  </div>
+              
+                  <!-- Login Form -->
+                  
+                    <input type="text" id="username" class="fadeIn second" name="login" placeholder="username">
+                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+                    <input type="submit" id="btnSignUp" class="fadeIn fourth" value="Sign Up">
+                  
+              
+                  <!-- Remind Passowrd -->
+                  <div id="formFooter">
+                    <a class="underlineHover" href="/login">Already Registered</a>
+                  </div>
+              
+                </div>
+              </div>
+</main>
+
+<footer>
+</footer>
+</body>
+</html>
