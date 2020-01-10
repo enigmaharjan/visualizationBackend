@@ -27,7 +27,6 @@ window.onload = function () {
                     localStorage.setItem('Token', json.accessToken);
                     localStorage.setItem('username', username)
                     alert(json.message)
-                    alert('Token: ' + json.accessToken);
                     window.location.href = '/'
                 }
                 else {

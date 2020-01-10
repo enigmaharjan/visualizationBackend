@@ -12,34 +12,34 @@ app.use("/js",express.static(__dirname + "/js"));
 app.use("/fonts",express.static(__dirname + "/fonts"));
 
 // use res.render to load up an ejs view file
-// index page 
+// login page 
 app.get('/login', function(req, res) {
     res.render('pages/login');
 });
 
-// student page 
+// product page 
 app.get('/product', function(req, res) {
     res.render('pages/product');
 });
 
-// student page 
+// signup page 
 app.get('/signup', function(req, res) {
     res.render('pages/signup');
 });
 
-// batch page
+// forecasting page
 app.get('/forecasting', function(req, res) {
     res.render('pages/forecasting');
 });
 
 // fee page
-app.get('/fee', function(req, res) {
-    res.render('pages/fee');
+app.get('/customer', function(req, res) {
+    res.render('pages/customer');
 });
 
-//login page
+//index page
 app.get('/', function(req, res) {
-    res.render('pages/cust');
+    res.render('pages/index');
 });
 
 app.listen(8080);
